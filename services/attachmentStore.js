@@ -21,11 +21,17 @@ async function fileExists(filePath) {
     });
 }
 
+function getAttachmentFilePath(id) {
+
+    const fileName = id.toLowerCase();
+    return path.join(fileLocation, ...[...Array(4).keys()].map(i => fileName[i]), id);
+}
+
 module.exports = {
 
     getAttachmentStream: async (id) => {
 
-        const filePath = path.join(fileLocation, id);
+        const filePath = getAttachmentFilePath(id);
         if ( ! await fileExists(filePath)) return null;
 
         return fs.createReadStream(filePath);
