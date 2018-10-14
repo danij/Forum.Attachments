@@ -81,11 +81,8 @@ router.get('/:id', async (req, res) => {
 
                 "Content-Length": attachment.size,
                 "Content-Type": mime.lookup(attachment.name) || 'application/octet-stream',
+                "Content-Disposition": "attachment; filename=\"" + encodeURIComponent(attachment.name) + "\""
             };
-            if ( ! req.query.hasOwnProperty('embed')) {
-
-                responseHeaders["Content-Disposition"] = "attachment; filename=\"" + encodeURIComponent(attachment.name) + "\""
-            }
 
             res.writeHead(200, responseHeaders);
             stream.pipe(res);
