@@ -8,10 +8,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "busboy": "^0.2.14",
-    "cookie-parser": "^1.4.3",
+    "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
-    "express": "^4.16.3",
-    "mime-types": "^2.1.20",
+    "express": "^4.16.4",
+    "mime-types": "^2.1.22",
     "morgan": "~1.9.0",
     "uuid": "^3.3.2"
   }
